@@ -1,0 +1,27 @@
+{
+  "manifest_version": 3,
+  "name": "Overleaf Session2 Cookie Copier",
+  "version": "1.3",
+  "description": "Intercepts the overleaf_session2 cookie and copies it to clipboard via a keyboard shortcut, with a floating confirmation window.",
+  "permissions": [
+    "cookies",
+    "storage",
+    "scripting",
+    "tabs"
+  ],
+  "host_permissions": [
+    "*://*.overleaf.com/*"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "commands": {
+    "copy_cookie": {
+      "suggested_key": {
+        "default": "Ctrl+Shift+Y",
+        "mac": "Command+Shift+Y"
+      },
+      "description": "Copy the latest overleaf_session2 cookie to clipboard"
+    }
+  }
+}
